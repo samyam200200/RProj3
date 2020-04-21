@@ -16,7 +16,7 @@ subject<-rbind(subject_test, subject_train)
 library(dplyr)
 
 #Extracts only the measurements on the mean and standard deviation for each measurement.
-code<-grep("mean()|sd()", features[,2])
+code<-grep("mean()|std()", features[,2])
 final<-X[,code]
 
 #Uses descriptive activity names to name the activities in the data set
