@@ -1,17 +1,3 @@
-#Pulls data from web
-fileName <- "UCIdata.zip"
-url <- "http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-dir <- "UCI HAR Dataset"
-
-
-if(!file.exists(fileName)){
-  download.file(url,fileName, mode = "wb") 
-}
-
-
-if(!file.exists(dir)){
-  unzip("UCIdata.zip", files = NULL, exdir=".")
-}
 #Assigning variable names from downloaded files
 features<-read.table("UCI HAR Dataset/features.txt", col.names = c("S.n", "Columnnames"))
 x_test<-read.table("UCI HAR Dataset/test/X_test.txt", col.names = features$Columnnames)
